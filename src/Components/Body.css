@@ -1,0 +1,33 @@
+.main {
+  margin: 250px 350px;
+  display: flex;
+}
+.body-text {
+  margin-top: 1.5rem;
+}
+.titles {
+  color: rebeccapurple;
+  font-size: 50px;
+  margin-left: -5px;
+}
+.paragraph {
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  margin: 2rem 0px;
+}
+.button {
+  color: white;
+  background-color: rebeccapurple;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.button:hover {
+  color: purple;
+  background-color: violet;
+}
+.p {
+  border-radius: 350px;
+  background-color: purple;
+}

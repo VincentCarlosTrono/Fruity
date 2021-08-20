@@ -1,0 +1,259 @@
+\documentclass[10pt,a4paper]{article}
+
+% Packages
+\usepackage{fancyhdr}           % For header and footer
+\usepackage{multicol}           % Allows multicols in tables
+\usepackage{tabularx}           % Intelligent column widths
+\usepackage{tabulary}           % Used in header and footer
+\usepackage{hhline}             % Border under tables
+\usepackage{graphicx}           % For images
+\usepackage{xcolor}             % For hex colours
+%\usepackage[utf8x]{inputenc}    % For unicode character support
+\usepackage[T1]{fontenc}        % Without this we get weird character replacements
+\usepackage{colortbl}           % For coloured tables
+\usepackage{setspace}           % For line height
+\usepackage{lastpage}           % Needed for total page number
+\usepackage{seqsplit}           % Splits long words.
+%\usepackage{opensans}          % Can't make this work so far. Shame. Would be lovely.
+\usepackage[normalem]{ulem}     % For underlining links
+% Most of the following are not required for the majority
+% of cheat sheets but are needed for some symbol support.
+\usepackage{amsmath}            % Symbols
+\usepackage{MnSymbol}           % Symbols
+\usepackage{wasysym}            % Symbols
+%\usepackage[english,german,french,spanish,italian]{babel}              % Languages
+
+% Document Info
+\author{Roman Semko (romansemko)}
+\pdfinfo{
+  /Title (ecmascript-6-es6.pdf)
+  /Creator (Cheatography)
+  /Author (Roman Semko (romansemko))
+  /Subject (ECMAScript 6 - ES6 Cheat Sheet)
+}
+
+% Lengths and widths
+\addtolength{\textwidth}{6cm}
+\addtolength{\textheight}{-1cm}
+\addtolength{\hoffset}{-3cm}
+\addtolength{\voffset}{-2cm}
+\setlength{\tabcolsep}{0.2cm} % Space between columns
+\setlength{\headsep}{-12pt} % Reduce space between header and content
+\setlength{\headheight}{85pt} % If less, LaTeX automatically increases it
+\renewcommand{\footrulewidth}{0pt} % Remove footer line
+\renewcommand{\headrulewidth}{0pt} % Remove header line
+\renewcommand{\seqinsert}{\ifmmode\allowbreak\else\-\fi} % Hyphens in seqsplit
+% This two commands together give roughly
+% the right line height in the tables
+\renewcommand{\arraystretch}{1.3}
+\onehalfspacing
+
+% Commands
+\newcommand{\SetRowColor}[1]{\noalign{\gdef\RowColorName{#1}}\rowcolor{\RowColorName}} % Shortcut for row colour
+\newcommand{\mymulticolumn}[3]{\multicolumn{#1}{>{\columncolor{\RowColorName}}#2}{#3}} % For coloured multi-cols
+\newcolumntype{x}[1]{>{\raggedright}p{#1}} % New column types for ragged-right paragraph columns
+\newcommand{\tn}{\tabularnewline} % Required as custom column type in use
+
+% Font and Colours
+\definecolor{HeadBackground}{HTML}{333333}
+\definecolor{FootBackground}{HTML}{666666}
+\definecolor{TextColor}{HTML}{333333}
+\definecolor{DarkBackground}{HTML}{48A375}
+\definecolor{LightBackground}{HTML}{DFEFE7}
+\renewcommand{\familydefault}{\sfdefault}
+\color{TextColor}
+
+% Header and Footer
+\pagestyle{fancy}
+\fancyhead{} % Set header to blank
+\fancyfoot{} % Set footer to blank
+\fancyhead[L]{
+\noindent
+\begin{multicols}{3}
+\begin{tabulary}{5.8cm}{C}
+    \SetRowColor{DarkBackground}
+    \vspace{-7pt}
+    {\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\noindent
+        \hspace*{-6pt}\includegraphics[width=5.8cm]{/web/www.cheatography.com/public/images/cheatography_logo.pdf}}
+    }
+\end{tabulary}
+\columnbreak
+\begin{tabulary}{11cm}{L}
+    \vspace{-2pt}\large{\bf{\textcolor{DarkBackground}{\textrm{ECMAScript 6 - ES6 Cheat Sheet}}}} \\
+    \normalsize{by \textcolor{DarkBackground}{Roman Semko (romansemko)} via \textcolor{DarkBackground}{\uline{cheatography.com/26567/cs/7461/}}}
+\end{tabulary}
+\end{multicols}}
+
+\fancyfoot[L]{ \footnotesize
+\noindent
+\begin{multicols}{3}
+\begin{tabulary}{5.8cm}{LL}
+  \SetRowColor{FootBackground}
+  \mymulticolumn{2}{p{5.377cm}}{\bf\textcolor{white}{Cheatographer}}  \\
+  \vspace{-2pt}Roman Semko (romansemko) \\
+  \uline{cheatography.com/romansemko} \\
+        \uline{\seqsplit{semkodev}.com}
+  \end{tabulary}
+\vfill
+\columnbreak
+\begin{tabulary}{5.8cm}{L}
+  \SetRowColor{FootBackground}
+  \mymulticolumn{1}{p{5.377cm}}{\bf\textcolor{white}{Cheat Sheet}}  \\
+   \vspace{-2pt}Published 10th March, 2016.\\
+   Updated 10th March, 2016.\\
+   Page {\thepage} of \pageref{LastPage}.
+\end{tabulary}
+\vfill
+\columnbreak
+\begin{tabulary}{5.8cm}{L}
+  \SetRowColor{FootBackground}
+  \mymulticolumn{1}{p{5.377cm}}{\bf\textcolor{white}{Sponsor}}  \\
+  \SetRowColor{white}
+  \vspace{-5pt}
+  %\includegraphics[width=48px,height=48px]{dave.jpeg}
+  Measure your website readability!\\
+  www.readability-score.com
+\end{tabulary}
+\end{multicols}}
+
+
+
+
+\begin{document}
+\raggedright
+\raggedcolumns
+
+% Set font size to small. Switch to any value
+% from this page to resize cheat sheet text:
+% www.emerson.emory.edu/services/latex/latex_169.html
+\footnotesize % Small font.
+
+\begin{multicols*}{3}
+
+\begin{tabularx}{5.377cm}{X}
+\SetRowColor{DarkBackground}
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Author}}  \tn
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{Roman Semko - JS experts @ SemkoDev \newline % Row Count 1 (+ 1)
+https://semkodev.com% Row Count 2 (+ 1)
+} \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{web development on steroids!}  \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{5.377cm}{X}
+\SetRowColor{DarkBackground}
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Constants}}  \tn
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{const PI = 3.141593 \newline PI \textgreater{} 3.0} \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{5.377cm}{X}
+\SetRowColor{DarkBackground}
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Scoping}}  \tn
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{// Block-Scoped Variables \newline for (let i = 0; i \textless{} a.length; i++) \{ \newline     let x = a{[}i{]} \newline     … \newline \} \newline for (let i = 0; i \textless{} b.length; i++) \{ \newline     let y = b{[}i{]} \newline     … \newline \} \newline  \newline let callbacks = {[}{]} \newline for (let i = 0; i \textless{}= 2; i++) \{ \newline     callbacks{[}i{]} = function () \{ return i * 2 \} \newline \} \newline callbacks{[}0{]}() === 0 \newline callbacks{[}1{]}() === 2 \newline callbacks{[}2{]}() === 4 \newline  \newline // Block-Scoped Functions \newline \{ \newline     function foo () \{ return 1 \} \newline     foo() === 1 \newline     \{ \newline         function foo () \{ return 2 \} \newline         foo() === 2 \newline     \} \newline     foo() === 1 \newline \}} \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{5.377cm}{X}
+\SetRowColor{DarkBackground}
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Arrow functions}}  \tn
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{odds  = evens.map(v =\textgreater{} v + 1) \newline pairs = evens.map(v =\textgreater{} (\{ even: v, odd: v + 1 \})) \newline nums  = evens.map((v, i) =\textgreater{} v + i) \newline  \newline // Statement bodies \newline nums.forEach(v =\textgreater{} \{ \newline    if (v \% 5 === 0) \newline        fives.push(v) \newline \}) \newline  \newline // Lexical this - More intuitive handling of current object context. \newline this.nums.forEach((v) =\textgreater{} \{ \newline     if (v \% 5 === 0) this.fives.push(v) \newline \})} \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{5.377cm}{X}
+\SetRowColor{DarkBackground}
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Extended parameter handling}}  \tn
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{// Default parameters \newline function f (x, y = 7, z = 42) \{ \newline     return x + y + z \newline \} \newline f(1) === 50 \newline  \newline // Rest parameters \newline function f (x, y, ...a) \{ \newline     return (x + y) * a.length \newline \} \newline f(1, 2, "hello", true, 7) === 9 \newline  \newline // Spread operator \newline var params = {[} "hello", true, 7 {]} \newline var other = {[} 1, 2, ...params {]} // {[} 1, 2, "hello", true, 7 {]} \newline f(1, 2, ...params) === 9 \newline  \newline var str = "foo" \newline var chars = {[} ...str {]} // {[} "f", "o", "o" {]}} \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{5.377cm}{X}
+\SetRowColor{DarkBackground}
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Template Litarals}}  \tn
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{var customer = \{ name: "Foo" \} \newline var card = \{ amount: 7, product: "Bar", unitprice: 42 \} \newline message = `Hello \$\{customer.name\}, \newline want to buy \$\{card.amount\} \$\{card.product\} for \newline a total of \$\{card.amount * card.unitprice\} bucks?`} \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{5.377cm}{X}
+\SetRowColor{DarkBackground}
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Extended Literals}}  \tn
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{0b111110111 === 503 \newline 0o767 === 503} \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{5.377cm}{X}
+\SetRowColor{DarkBackground}
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Enhanced Object Properties}}  \tn
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{// Shorthand \newline obj = \{ x, y \} // =\textgreater{} obj = \{ x: x, y: y \}; \newline  \newline // Computed properties \newline let obj = \{ \newline     foo: "bar", \newline     {[} "baz" + quux() {]}: 42 \newline \} \newline  \newline // Method properties \newline obj = \{ \newline     foo (a, b) \{…\}, \newline     bar (x, y) \{ …\} \newline \}} \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{5.377cm}{X}
+\SetRowColor{DarkBackground}
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Destructuring Assignment}}  \tn
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{// Array matching \newline var list = {[} 1, 2, 3 {]} \newline var {[} a, , b {]} = list \newline {[} b, a {]} = {[} a, b {]} \newline  \newline // Object matching, including deep matching \newline var \{ op: a, lhs: \{ op: b \}, rhs: c \} = getASTNode() \newline  \newline // Parameter context matching \newline function f ({[} name, val {]}) \{ \newline     console.log(name, val) \newline \} \newline function g (\{ name: n, val: v \}) \{ \newline     console.log(n, v) \newline \} \newline function h (\{ name, val \}) \{ \newline     console.log(name, val) \newline \} \newline f({[} "bar", 42 {]}) \newline g(\{ name: "foo", val:  7 \}) \newline h(\{ name: "bar", val: 42 \})} \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{5.377cm}{X}
+\SetRowColor{DarkBackground}
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Classes}}  \tn
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{class Rectangle extends Shape \{ \newline   constructor (id, x, y, width, height) \{ \newline     // Super call \newline     super(id, x, y) \newline     this.width  = width \newline     this.height = height \newline   \} \newline   // Getter and setter \newline   set width  (width)  \{ this.\_width = width               \} \newline   get width  ()       \{ return this.\_width                \} \newline \} \newline  \newline class Circle extends Shape \{ \newline   constructor (id, x, y, radius) \{ \newline     super(id, x, y) \newline     this.radius = radius \newline   \} \newline   do\_something(x) \{ \newline     let a = 12; \newline     // call parent method \newline     super.do\_something(x + a); \newline   \} \newline   static do\_whatever() \{ \newline     // static access \newline   \} \newline \} \newline  \newline Circle.do\_whatever()} \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{5.377cm}{X}
+\SetRowColor{DarkBackground}
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Maps \& Sets}}  \tn
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{// Set \newline let s = new Set() \newline s.add("hello").add("goodbye").add("hello") \newline s.size === 2 \newline s.has("hello") === true \newline for (let key of s.values()) // insertion order \newline     console.log(key) \newline  \newline // Map \newline let m = new Map() \newline m.set("hello", 42) \newline m.set(s, 34) \newline m.get(s) === 34 \newline m.size === 2 \newline for (let {[} key, val {]} of m.entries()) \newline     console.log(key + " = " + val)} \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{5.377cm}{X}
+\SetRowColor{DarkBackground}
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{New Builtin methods}}  \tn
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{// Object.assign \newline var dst  = \{ quux: 0 \} \newline var src1 = \{ foo: 1, bar: 2 \} \newline var src2 = \{ foo: 3, baz: 4 \} \newline Object.assign(dst, src1, src2) \newline dst.quux === 0 \newline dst.foo  === 3 \newline dst.bar  === 2 \newline dst.baz  === 4 \newline  \newline // Array.find \newline {[} 1, 3, 4, 2 {]}.find(x =\textgreater{} x \textgreater{} 3) // 4 \newline  \newline // String repeat \newline " ".repeat(4 * depth) \newline "foo".repeat(3) \newline  \newline // String search \newline "hello".startsWith("ello", 1) // true \newline "hello".endsWith("hell", 4)   // true \newline "hello".includes("ell")       // true \newline "hello".includes("ell", 1)    // true \newline "hello".includes("ell", 2)    // false \newline  \newline // Number type checking \newline Number.isNaN(42) === false \newline Number.isNaN(NaN) === true \newline Number.isFinite(Infinity) === false \newline Number.isFinite(-Infinity) === false \newline Number.isFinite(NaN) === false \newline Number.isFinite(123) === true \newline  \newline // Number safety checking \newline Number.isSafeInteger(42) === true \newline Number.isSafeInteger(9007199254740992) === false \newline  \newline // Number truncating \newline console.log(Math.trunc(42.7)) // 42 \newline console.log(Math.trunc( 0.1)) // 0 \newline console.log(Math.trunc(-0.1)) // -0 \newline  \newline // Number sign determination \newline console.log(Math.sign(7))   // 1 \newline console.log(Math.sign(0))   // 0 \newline console.log(Math.sign(-0))  // -0 \newline console.log(Math.sign(-7))  // -1 \newline console.log(Math.sign(NaN)) // NaN} \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{5.377cm}{X}
+\SetRowColor{DarkBackground}
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Promises}}  \tn
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{function msgAfterTimeout (msg, who, timeout) \{ \newline     return new Promise((resolve, reject) =\textgreater{} \{ \newline         setTimeout(() =\textgreater{} resolve(`\$\{msg\} Hello \$\{who\}!`), timeout) \newline     \}) \newline \} \newline msgAfterTimeout("", "Foo", 100).then((msg) =\textgreater{} \newline     msgAfterTimeout(msg, "Bar", 200) \newline ).then((msg) =\textgreater{} \{ \newline     console.log(`done after 300ms:\$\{msg\}`) \newline \}) \newline  \newline // Combining promises \newline function fetchAsync (url, timeout, onData, onError) \{ \newline     … \newline \} \newline let fetchPromised = (url, timeout) =\textgreater{} \{ \newline     return new Promise((resolve, reject) =\textgreater{} \{ \newline         fetchAsync(url, timeout, resolve, reject) \newline     \}) \newline \} \newline Promise.all({[} \newline     \seqsplit{fetchPromised("http://backend/foo}.txt", 500), \newline     \seqsplit{fetchPromised("http://backend/bar}.txt", 500), \newline     \seqsplit{fetchPromised("http://backend/baz}.txt", 500) \newline {]}).then((data) =\textgreater{} \{ \newline     let {[} foo, bar, baz {]} = data \newline     console.log(`success: foo=\$\{foo\} bar=\$\{bar\} baz=\$\{baz\}`) \newline \}, (err) =\textgreater{} \{ \newline     console.log(`error: \$\{err\}`) \newline \})} \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+
+% That's all folks
+\end{multicols*}
+
+\end{document}

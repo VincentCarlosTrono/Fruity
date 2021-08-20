@@ -1,0 +1,17 @@
+.brain {
+  margin: 0px 350px;
+  justify-content: space-between;
+  display: flex;
+}
+.brain li:hover {
+  color: blueviolet;
+}
+.brain h1 {
+  font-size: 1.5rem;
+}
+
+.brain li {
+  list-style: none;
+  color: rgb(133, 125, 125);
+  width: 250px;
+}

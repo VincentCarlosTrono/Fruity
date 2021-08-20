@@ -1,0 +1,62 @@
+.parent {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 350px;
+  align-items: center;
+  border-bottom: 1px solid rgb(218, 215, 215);
+  position: fixed;
+  background-color: white;
+  width: 100vw;
+  margin-top: -250px;
+}
+.logo {
+  color: purple;
+  font-size: 25px;
+  cursor: pointer;
+}
+.head-list ul {
+  font-size: 16px;
+  list-style: none;
+  display: flex;
+  gap: 50px;
+}
+
+.head-list li:hover {
+  color: purple;
+  cursor: pointer;
+}
+.A:hover {
+  background-color: violet;
+  color: white;
+  border-radius: 0px 20px;
+  padding: 0px 10px;
+  transition: 0.3s;
+}
+.B:hover {
+  background-color: violet;
+  color: white;
+  border-radius: 0px 20px;
+  padding: 0px 10px;
+  transition: 0.3s;
+}
+.C:hover {
+  background-color: violet;
+  color: white;
+  border-radius: 0px 20px;
+  padding: 0px 10px;
+  transition: 0.3s;
+}
+.D:hover {
+  background-color: violet;
+  color: white;
+  border-radius: 0px 20px;
+  padding: 0px 10px;
+  transition: 0.3s;
+}
+.E:hover {
+  background-color: violet;
+  color: white;
+  border-radius: 0px 20px;
+  padding: 0px 10px;
+  transition: 0.3s;
+}

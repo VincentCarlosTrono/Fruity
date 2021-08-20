@@ -1,0 +1,1298 @@
+<!DOCTYPE html><html
+lang="en" prefix="og: http://ogp.me/ns#"><head><title>Functional Programming in JavaScript Cheat Sheet Cheat Sheet by ck0d3r - Download free from Cheatography - Cheatography.com: Cheat Sheets For Every Occasion</title><link
+rel="dns-prefetch" href="https://media.cheatography.com"><link
+rel="preconnect" href="https://media.cheatography.com"><meta
+content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta
+http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta
+http-equiv="Content-Style-Type" content="text/css"><meta
+http-equiv="X-UA-Compatible" content="IE=Edge"><base
+href="https://cheatography.com/"><link
+rel="shortcut icon" href="favicon.png"><link
+rel="apple-touch-icon" href="/images/cheatography-iphone.png"><link
+rel="alternate" type="application/rss+xml" title="New Cheat Sheets RSS feed." href="https://cheatography.com/explore/new/rss/"><meta
+name="keywords" content="functionalprogramming javascript "><meta
+name="monetization" content="$ilp.uphold.com/QRNi8QL4Gr3y"><link
+rel="canonical" href="https://cheatography.com/ck0d3r/cheat-sheets/functional-programming-in-javascript-cheat-sheet/" /><meta
+property="fb:admins" content="860405712"/><meta
+property="fb:app_id" content="152741628156662"/><meta
+property="og:site_name" content="Cheatography"/><meta
+property="og:url" content="https://cheatography.com/ck0d3r/cheat-sheets/functional-programming-in-javascript-cheat-sheet/"/><meta
+property="og:title" content="Functional Programming in JavaScript Cheat Sheet Cheat Sheet"/><meta
+property="og:image" content="https://media.cheatography.com/storage/thumb/ck0d3r_functional-programming-in-javascript-cheat-sheet.600.jpg"/><meta
+property="og:type" content="cheatography:cheat_sheet"/><meta
+name="twitter:card" content="summary_large_image" /><meta
+name="twitter:title" content="Functional Programming in JavaScript Cheat Sheet Cheat Sheet" /><meta
+name="twitter:site" content="@Cheatography" /><meta
+name="twitter:image" content="https://media.cheatography.com/storage/thumb/ck0d3r_functional-programming-in-javascript-cheat-sheet.600.jpg" /><meta
+name="description" content="This is a cheat sheet describing the basics of FP in JS"/><meta
+property="og:description" content="This is a cheat sheet describing the basics of FP in JS"/><meta
+name="twitter:description" content="This is a cheat sheet describing the basics of FP in JS" /> <script src="https://media.cheatography.com/scripts/jquery.min.js"></script> <link
+href="https://media.cheatography.com/styles/styles.scss.css?v=19" rel="stylesheet"><link
+rel="preload" href="https://media.cheatography.com/styles/font-awesome.min.css?v=3" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link
+href="https://media.cheatography.com/styles/font-awesome.min.css?v=2" rel="stylesheet"></noscript><link
+rel="preload" href="https://media.cheatography.com/styles/bootstrap-tour-standalone.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> <script src="https://media.cheatography.com/scripts/bootstrap-tour-standalone.min.js"></script> <link
+rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/github-gist.min.css"> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script> <script>hljs.highlightAll();</script> <script type="text/javascript">var defaultLanguages = false;
+            var rememberTagCookieName = false;
+            var ratableCheatSheetId = false;
+            var isRateable = true;</script> <meta
+name="p:domain_verify" content="f842c4485eeea6c6d71b4314221cc6c0"/></head><body
+class="page-cheatsheet style2"> <script type="text/javascript">var width = document.body.clientWidth;
+            if (width <= 600) {
+                deviceBracket = 'mobile';
+            } else if (width <= 1000) {
+                deviceBracket = 'tablet';
+            } else {
+                deviceBracket = 'desktop';
+            }
+            document.body.className += " " + deviceBracket + "Skin";</script>  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-4997759-8', 'auto');
+        ga('send', 'pageview');</script> <div
+id="mobile_wrap_outer"><a
+href="#" id="mobileTrigger">Show Menu</a><div
+id="mobile_wrap_inner"><div
+id="header"><div
+id="header_inner"><div
+id="topbar"><div
+class="inner"><form
+method="GET" action="/explore/search/"><p><a
+href="https://cheatography.com/" class="imagelink logolink"><img
+width="156" height="25" id="title_logo" src="//media.cheatography.com/images/cheatography_logo.png" alt="Cheatography"></a><input
+id="q" name="q" type="text" placeholder="e.g., Regular Expressions, Garden, Kitchen, Audio"> <button
+type="submit" id="qsubmit"><i
+class="fa fa-search"></i></button><a
+class="social_link hideMobile" href="http://www.facebook.com/Cheatography"><i
+class="fa fa-facebook-official"></i></a>
+<a
+class="social_link hideMobile" href="http://twitter.com/Cheatography/"><i
+class="fa fa-twitter"></i></a>
+<a
+class="social_link hideMobile" href="http://www.pinterest.com/cheatography/"><i
+class="fa fa-pinterest"></i></a>
+<a
+class="social_link hideMobile" href="http://www.instagram.com/newcheatsheets/"><i
+class="fa fa-instagram"></i></a></p></form> <script type="text/javascript">$(document).ready(function () {
+                    // Restore search
+                    var lastSearch = $.cookie('lastSearch');
+                    $('#q').val(lastSearch);
+                });</script> </div></div></div><div
+id="menubar"><div
+class="inner"><div
+class="clear"></div><div
+id="user_info"><div
+class="logged_in" style="vertical-align: middle; position: relative; margin: 0; white-space: nowrap; z-index: 1001;">
+<a
+style="vertical-align: middle; margin: 0; padding-right: 0;" class="imagelink gravatar replace_userlink" href="/davechild/"><img
+class="gravatar replace_usergravatar" style="background: #fff; vertical-align: middle" src="#" width="32" height="32"></a>
+<a
+style="color: #fff; vertical-align: middle" href="/davechild/" class="replace_userlink replace_username"></a>
+<a
+href="/messages/" title="You have 0 new messages." class="imageline"><i
+class="fa fa-fw fa-envelope"></i></a></div><div
+id="user_dropdown"><div
+class="biptych1"><ul><li
+class=" "><i
+class="fa fa-fw fa-star"></i><a
+href="/favourites/">Your Favourite Cheat Sheets</a></li></ul><ul><li
+class=" "><i
+class="fa fa-fw fa-envelope"></i><a
+href="/messages/">Your Messages</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-trophy"></i><a
+href="/davechild/badges/">Your Badges</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-heart"></i><a
+href="/davechild/followers/">Your Friends</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-comments"></i><a
+href="/davechild/comments/">Your Comments</a></li></ul><ul><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-smile-o"></i><a
+href="/davechild/">View Profile</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-edit"></i><a
+href="/davechild/edit/">Edit Profile</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-key"></i><a
+href="/davechild/password/">Change Password</a></li></ul><ul><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-sign-out"></i><a
+href="/davechild/log-out/">Log out</a></li></ul></div><div
+class="biptych2"><ul><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-columns"></i><a
+href="/davechild/cheat-sheets/new/">New Cheat Sheet</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-link"></i><a
+href="/davechild/cheat-sheets/new-link/">New Link</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-upload"></i><a
+href="/davechild/cheat-sheets/new-upload/">New Upload</a></li></ul><ul><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-columns"></i><a
+href="/davechild/cheat-sheets/live/">Live Cheat Sheets</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-columns"></i><a
+href="/davechild/cheat-sheets/drafts/">Draft Cheat Sheets</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-group"></i><a
+href="/davechild/cheat-sheets/collaborations/">Collaborations</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-link"></i><a
+href="/davechild/cheat-sheets/links/">Links</a></li></ul><ul></ul></div><div
+class="clear"></div></div><div
+class="logged_out"><a
+class="imagelink login_button" href="/members/login">Login</a> &nbsp;or&nbsp; <a
+class="imagelink login_button" href="/members/register/">Register</a></div><div
+class="clear"></div></div>
+<nav><ul><li><a
+href="/"><i
+class="fa fa-home"></i> Home</a></li><li
+class="hidden showMobile logged_out"><a
+href="/members/login/">Login</a></li><li
+class="hidden showMobile logged_out"><a
+href="/members/register/">Register</a></li><li
+class="on"><a
+id="tourbrowse" href="/explore/"><i
+class="fa fa-columns"></i> Cheat Sheets</a><ul
+class="hideMobile"><li
+class=" "><i
+class="fa fa-fw fa-code"></i><a
+href="/programming/">Programming Cheat Sheets</a></li><li
+class=" "><i
+class="fa fa-fw fa-desktop"></i><a
+href="/software/">Software Cheat Sheets</a></li><li
+class=" "><i
+class="fa fa-fw fa-briefcase"></i><a
+href="/business/">Business and Marketing Cheat Sheets</a></li><li
+class=" "><i
+class="fa fa-fw fa-graduation-cap"></i><a
+href="/education/">Education Cheat Sheets</a></li><li
+class=" "><i
+class="fa fa-fw fa-home"></i><a
+href="/home/">Home and Health Cheat Sheets</a></li><li
+class=" "><i
+class="fa fa-fw fa-gamepad"></i><a
+href="/games/">Games and Hobbies Cheat Sheets</a></li><li
+class=" menu_separate  "><i
+class="fa fa-fw fa-graduation-cap"></i><a
+href="/explore/new/">New Cheat Sheets</a></li><li
+class=" "><i
+class="fa fa-fw fa-star"></i><a
+href="/explore/popular/">Popular Cheat Sheets</a></li><li
+class=" menu_separate  "><i
+class="fa fa-fw fa-tag"></i><a
+href="/explore/tags/">Cheat Sheets by Tag</a></li><li
+class=" "><i
+class="fa fa-fw fa-globe"></i><a
+href="/language/">Cheat Sheets by Language</a></li><li
+class=" menu_separate  "><i
+class="fa fa-fw fa-link"></i><a
+href="/external/">Cheat Sheet Links</a></li></ul></li><li
+class=""><a
+id="tourcreate" href="/create/"><i
+class="fa fa-pencil"></i> Create</a><ul
+class="hideMobile"><li
+class=" "><i
+class="fa fa-fw fa-question"></i><a
+href="/create/">Getting Started</a></li><li
+class=" logged_in"><i
+class="fa fa-fw fa-columns"></i><a
+href="/create/cheat-sheet/">Create a New Cheat Sheet</a></li><li
+class=" logged_in"><i
+class="fa fa-fw fa-upload"></i><a
+href="/create/cheat-sheet-upload/">Upload a Cheat Sheet</a></li><li
+class=" logged_in"><i
+class="fa fa-fw fa-link"></i><a
+href="/create/cheat-sheet-link/">Link to a Cheat Sheet</a></li><li
+class="menu_separate"><i
+class="fa fa-fw fa-smile-o"></i>A <a
+href="/davechild/cheat-sheets/cheatography/">Cheat Sheet</a> for Making Cheat Sheets!</li></ul></li><li><a
+id="tourcommunity" href="/members/"><i
+class="fa fa-users"></i> Community</a><ul
+class="hideMobile"><li
+class=" "><i
+class="fa fa-fw fa-globe"></i><a
+href="/members/">Community</a></li><li
+class=" "><i
+class="fa fa-fw fa-trophy"></i><a
+href="/badges/">Badges</a></li><li
+class=" menu_separate  logged_in"><i
+class="fa fa-fw fa-heart"></i><a
+href="/davechild/followers/">Friends</a></li><li
+class=" logged_out"><i
+class="fa fa-fw fa-user"></i><a
+href="/members/register/">Join Us!</a></li><li
+class=" menu_separate  logged_out"><i
+class="fa fa-fw fa-key"></i><a
+href="/members/login/">Login</a></li><li
+class=" menu_separate  "><i
+class="fa fa-fw fa-twitter"></i><a
+href="http://twitter.com/Cheatography/">Twitter</a></li><li
+class=" "><i
+class="fa fa-fw fa-facebook"></i><a
+href="http://www.facebook.com/Cheatography">Facebook</a></li><li
+class=" "><i
+class="fa fa-fw fa-pinterest"></i><a
+href="http://www.pinterest.com/cheatography/">Pinterest</a></li><li
+class=" "><i
+class="fa fa-fw fa-instagram"></i><a
+href="http://www.instagram.com/newcheatsheets/">Instagram</a></li></ul></li><li
+class="last"><a
+href="https://www.facebook.com/pg/Cheatography/community/" target="_blank" title="Get help on our Facebook community (opens in new window)."><i
+class="fa fa-external-link"></i> Help</a></li></ul><div
+class="hidden showMobile logged_in" id="user_dropdown_mobile"></div></nav><div
+class="clear"></div></div></div></div><div
+id="content" itemscope itemtype="http://schema.org/Course"><div
+id="content_inner"><div
+class="off">
+<span
+itemprop="provider" itemscope itemtype="http://schema.org/Organization">
+<span
+itemprop="name">Cheatography</span>
+<span
+itemprop="url">https://cheatography.com</span>
+</span></div><div
+class="hideMobile" id="cs_menu_wrapper"><div
+id="cs_menu"><div
+class="download_menu" id="tourcheatsheetmenu"><ul
+class="hideMobile noicon downloadItem"><li
+style="float: left; border-right: none;"><i
+class="fa fa-fw fa-download"></i> <a
+href="/ck0d3r/cheat-sheets/functional-programming-in-javascript-cheat-sheet/#downloads" onclick="trackDownloadPopup();">Download This Cheat Sheet (PDF)</a></li></ul><ul
+class="hideMobile noicon"><li><i
+class="fa fa-fw fa-comments"></i> <a
+href="/ck0d3r/cheat-sheets/functional-programming-in-javascript-cheat-sheet/#comments">Comments</a></li><li
+class="ratingStars">Rating:
+<i
+class="fa fa-spin fa-spinner"></i> <i></i> <i></i> <i></i> <i></i> <span
+id="ratingStarsCount" style="display: none;">(<a
+href="/ck0d3r/cheat-sheets/functional-programming-in-javascript-cheat-sheet/ratings/"></a>)</span></a></li><li><a
+href="#" title="Add or remove this cheat sheet from your favourites" class="imagelink toggle_favourite_link" id="item_cs_28268"><i
+class="fa fa-heart-o"></i></a></li></ul></div></div></div><div
+class="clear"></div><div
+id="pagetitle"><div
+itemscope itemtype="http://schema.org/BreadcrumbList"><ol
+class="breadcrumbs"><li
+itemprop="itemListElement" itemscope
+itemtype="http://schema.org/ListItem">
+<a
+itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://cheatography.com/" itemid="https://cheatography.com/">
+<span
+itemprop="name">Home</span></a><meta
+itemprop="position" content="1" />
+<span
+class="divider">&gt;</span></li><li
+itemprop="itemListElement" itemscope
+itemtype="http://schema.org/ListItem">
+<a
+itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://cheatography.com/programming/" itemid="https://cheatography.com/programming/">
+<span
+itemprop="name">Programming</span></a><meta
+itemprop="position" content="2" />
+<span
+class="divider">&gt;</span></li><li
+itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<a
+rel="tag" itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://cheatography.com/tag/javascript/" itemid="https://cheatography.com/tag/javascript/">
+<span
+itemprop="name">JavaScript Cheat Sheets</span></a><meta
+itemprop="position" content="3" /></li></ol><h1 itemprop="itemListElement" itemscope
+itemtype="http://schema.org/ListItem">
+<span
+itemscope itemtype="http://schema.org/Thing" itemprop="item" itemid="https://cheatography.com/ck0d3r/cheat-sheets/functional-programming-in-javascript-cheat-sheet/">
+<span
+itemprop="name">Functional Programming in JavaScript Cheat Sheet Cheat Sheet</span> <span
+class="subhead"> by  <span
+itemprop="author" itemscope itemtype="http://schema.org/Person"><a
+href="http://www.cheatography.com/ck0d3r/" class="user_hover" itemprop="url"><span
+itemprop="name">ck0d3r</span></a></span></span></span><meta
+itemprop="position" content="4" /></h1></div><style type="text/css">ol.breadcrumbs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  ol.breadcrumbs li {
+    float: left;
+  }
+  ol.breadcrumbs li span.divider {
+    padding: 0 10px;
+    color: #999;
+  }
+  h1 {
+    clear: both;
+    margin-bottom: 0;
+  }</style><div
+class="clear"></div><p
+class="subdesc" itemprop="description">This is a cheat sheet describing the basics of FP in JS</p><div
+class="clear"></div></div><div
+id="body_wide"><div
+id="body_wide_inner"><div
+id="body_wide_shadow"> <script type="text/javascript">var defaultRating = 0.0000;
+    var ratingCount = 0;
+    ratableCheatSheetId = '28268';
+    var hasUserRating = false;</script> <script type="text/javascript">var redirectTimeout;
+var cheat_sheet_id = 28268; // Used in ajax
+var cheatSheetName = 'Functional Programming in JavaScript Cheat Sheet Cheat Sheet';
+    var bTracking = false;
+
+$(document).ready(function() {
+    var hiddenBlocks = new Array();
+    if ($.cookie('hiddenBlocks')) {
+        hiddenBlocks = $.cookie('hiddenBlocks').split('-');
+        for (var i = 0; i < hiddenBlocks.length; i++) {
+            $('#block_' + hiddenBlocks[i]).slideUp(400);
+        }
+    }
+    $('.cheat_sheet_output_title').click(function() {
+        var block_id = this.id.substr(6);
+        // Check to see if it's hidden
+        if ($.inArray(block_id, hiddenBlocks) === -1) {
+            $('#block_' + block_id).slideUp(400);
+            hiddenBlocks[hiddenBlocks.length] = block_id;
+        } else {
+            $('#block_' + block_id).slideDown(400);
+            for (var i = 0; i < hiddenBlocks.length; i++) {
+                if (hiddenBlocks[i] == block_id) {
+                    hiddenBlocks.splice(i, 1);
+                }
+            }
+        }
+        // Now, toggle all those items with cookies
+        $.cookie('hiddenBlocks', hiddenBlocks.join('-'));
+    });
+});</script> <div
+class="clear"></div><style type="text/css">#subsection_programming { display: none; }
+#subsection_software { display: none; }
+#subsection_business { display: none; }
+#subsection_education { display: none; }
+#subsection_home { display: none; }
+#subsection_games { display: none; }
+
+            h2, .sidebar_box h4 {
+                border-bottom: 3px solid #01470D;
+            }
+
+            .cheat_sheet_output_wrapper {
+                background: #01470D;
+                border-bottom: 3px solid #01470D;
+            }
+
+                .cheat_sheet_output_wrapper a, .cheat_sheet_output_wrapper a:visited, .cheat_sheet_output_wrapper a:focus, .cheat_sheet_output_wrapper a:link, .cheat_sheet_output_wrapper a:hover {
+                    color: #01470D;
+                    border-color: #01470D;
+                }
+
+                .cheat_sheet_output_wrapper .cheat_sheet_output_block tr.altrow td, .cheat_sheet_output_wrapper .cheat_sheet_note {
+                    background: #F7F9F7;
+                }
+
+                .cheat_sheet_output_wrapper .cheat_sheet_note {
+                    border-top: 3px solid #01470D;
+                }
+
+                .cheat_sheet_output_wrapper h3.cheat_sheet_output_title {
+                                            color: #F7F9F7;
+                                    }
+
+            /* Breaks */
+            .cheat_sheet_output_column_columnbreak, .cheat_sheet_output_column_pagebreak {
+                border-color: #eee;
+            }
+
+                .cheat_sheet_output_wrapper.cheat_sheet_output_column_columnbreak .cheat_sheet_output_block,
+                .cheat_sheet_output_wrapper.cheat_sheet_output_column_pagebreak .cheat_sheet_output_block {
+                    border-top: none;
+                }
+
+                .cheat_sheet_output_wrapper.cheat_sheet_output_column_columnbreak h3.cheat_sheet_output_title,
+                .cheat_sheet_output_wrapper.cheat_sheet_output_column_pagebreak h3.cheat_sheet_output_title {
+                    color: #999;
+                    background: #eee;
+                }
+
+            /* Buttons */
+            .button_add, .button_add:visited, .button_add:active, .button_add:hover, .draft_notice {
+                background-color: #01470D;
+                border: 1px solid #01470D;
+                color: #F7F9F7;
+            }
+
+                .button_add:hover {
+                    background-color: #F7F9F7;
+                    color: #01470D;
+                }
+
+            .download_menu {
+                background-color: #01470D;
+            }
+
+            #content #content_inner, #cs_menu {
+                border-top-color: #01470D;
+            }
+
+            #content #content_inner {
+                /*top: -3px;*/
+                border: none;
+            }
+
+            #menubar .inner {
+                border-top-color: #01470D;
+            }
+
+            .cheat_sheet_output_block div {
+                border-color: #01470D !important;
+            }
+
+            .footer_popup {
+                background-color: #F7F9F7;
+                box-shadow: 0 0 3px #01470D;
+            }
+
+
+            /* style 2 */
+
+            .style2, .style2 #content #content_inner {
+                background: #F7F9F7;
+            }
+            .style2 #cs_menu .download_menu {
+                border-bottom: 2px solid #F7F9F7;
+            }
+            .style2 #tag_list a {
+                color: #01470D;
+                border-color: #01470D;
+            }
+            .style2 .cheat_sheet_output_wrapper .cheat_sheet_output_block tr td, .style2 .cheat_sheet_output_wrapper .cheat_sheet_note {
+                background: #F7F9F7;
+            }
+            .style2 .cheat_sheet_output_wrapper .cheat_sheet_note {
+                border-top: 1px solid #F7F9F7;
+            }
+            .style2 .cheat_sheet_output_wrapper h3.cheat_sheet_output_title {
+                                    color: #01470D;
+                            }
+            .style2 .cheat_sheet_output_block div {
+                border-color: #F7F9F7 !important;
+            }
+
+
+            .style2 .cheat_sheet_output_wrapper h3.cheat_sheet_output_title {
+                padding: 6px 13px;
+            }
+            .style2 .cheat_sheet_output_wrapper {
+                border-bottom: none;
+                background: none;
+                margin-bottom: 25px;
+            }
+            #downloads {
+                background: none;
+                border-top: none;
+                border-bottom: none;
+            }
+            .style2 .commentblock {
+                background: none;
+                margin-bottom: 35px;
+            }
+            .style2 .commentblock .commenter {
+                background: none;
+            }
+            .style2 .commentblock .commentext {
+                background: #fff;
+                border-radius: 3px;
+                padding: 1em;
+                box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            }
+
+                .style2 .cheat_sheet_output_wrapper .cheat_sheet_output_block {
+                    padding: 5px;
+                    border-radius: 3px;
+                    background: #fff;
+                    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+                }
+
+                .style2 .cheat_sheet_output_wrapper .cheat_sheet_output_block tr.altrow td, .style2 .cheat_sheet_output_wrapper .cheat_sheet_note {
+                    background: #fff;
+                }</style><article><table
+border="0" cellspacing="0" width="100%" cellpadding="0" class="cheat_sheet_output"><tr><td
+width="32%" valign="top" class="cheat_sheet_output_sortable cheat_sheet_output_column_1"><section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_onecol" style="z-index: 30; page-break-inside: avoid;" id="block_110052"><h3 class="cheat_sheet_output_title" id="title_28268_110052">Functional Progra&#173;mming</h3><div
+class="cheat_sheet_output_block" id="block_28268_110052"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_onecol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1" colspan="1"><div
+style="padding: 3px 8px;">Functional progra&#173;mming is a declar&#173;ative paradigm of building software by composing pure functions.</div></td></tr></table></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_onecol" style="z-index: 30; page-break-inside: avoid;" id="block_110054"><h3 class="cheat_sheet_output_title" id="title_28268_110054">Pure Functions</h3><div
+class="cheat_sheet_output_block" id="block_28268_110054"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_onecol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1" colspan="1">&nbsp;</td></tr></table><div
+class="cheat_sheet_note"><div
+style="padding: 3px 8px;">A pure function is a function which:<br
+/>
+1. Given the same input, returns the same output. <br
+/>
+2. Has no side-e&#173;ffects</div></div></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_onecol" style="z-index: 30; page-break-inside: avoid;" id="block_110062"><h3 class="cheat_sheet_output_title" id="title_28268_110062">Benefits of Functional Progra&#173;mming</h3><div
+class="cheat_sheet_output_block" id="block_28268_110062"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_onecol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1" colspan="1"><div
+style="padding: 3px 8px;">It helps us to solve problems effect&#173;ively in a simpler way</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1" colspan="1"><div
+style="padding: 3px 8px;">It improves modularity</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1" colspan="1"><div
+style="padding: 3px 8px;">It reduces complex problems into simple pieces</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1" colspan="1"><div
+style="padding: 3px 8px;">It helps us to debug the code quickly</div></td></tr></table></div>
+</section></td><td
+class="cheat_sheet_output_column_spacer" width="2%">&nbsp;</td><td
+width="32%" valign="top" class="cheat_sheet_output_sortable cheat_sheet_output_column_2"><section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol" style="z-index: 30; page-break-inside: avoid;" id="block_110055"><h3 class="cheat_sheet_output_title" id="title_28268_110055">Arrow functions</h3><div
+class="cheat_sheet_output_block" id="block_28268_110055"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_twocol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">Increment</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">const incr = x =&gt; x + 1</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">Add 2 numbers</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">const add = (x, y) =&gt; x + y</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">Square root</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">const squareRoot = x =&gt; Math.s&#173;qrt(x)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">Square</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">const square = x =&gt; x * x</div></td></tr></table></div>
+</section><section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol" style="z-index: 30; page-break-inside: avoid;" id="block_110057"><h3 class="cheat_sheet_output_title" id="title_28268_110057">Currying</h3><div
+class="cheat_sheet_output_block" id="block_28268_110057"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_twocol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">Add 2 numbers</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">const add = x =&gt; y =&gt; x + y</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">Multiply with a number</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">const multiply = m =&gt; n =&gt; n * m</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">Find volume</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">const volume = l =&gt; w =&gt; h =&gt; l <em> w </em> h</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">Find volume of cylinder</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">const aCylinder = volume&#173;(10&#173;)(1&#173;0)(10)</div></td></tr></table><div
+class="cheat_sheet_note"><div
+style="padding: 3px 8px;"><em>Currying</em> is a transf&#173;orm&#173;ation of functions that translates a function from callable as f(a, b, c) into callable as f(a)(b&#173;)(c).</div></div></div>
+</section></td><td
+class="cheat_sheet_output_column_spacer" width="2%">&nbsp;</td><td
+width="32%" valign="top" class="cheat_sheet_output_sortable cheat_sheet_output_column_3"><section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol" style="z-index: 30; page-break-inside: avoid;" id="block_110059"><h3 class="cheat_sheet_output_title" id="title_28268_110059">Array methods</h3><div
+class="cheat_sheet_output_block" id="block_28268_110059"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_twocol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">Double each array element</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">const map1 = array1.map(x =&gt; x *2)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">Print each array element</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">array1.fo&#173;rEach(e =&gt; consol&#173;e.l&#173;og(e))</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">The sum of array elements</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">array1.re&#173;duc&#173;e((acc, val) =&gt; acc + val)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">Filter array</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">[1, 2, 3].fil&#173;ter(n =&gt; n &gt; 2)</div></td></tr></table><div
+class="cheat_sheet_note"><div
+style="padding: 3px 8px;">You can shorten and simplify your code with the Array methods!</div></div></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_code" style="z-index: 30; page-break-inside: avoid;" id="block_110060"><h3 class="cheat_sheet_output_title" id="title_28268_110060">Higher&#173;-Order functions</h3><div
+class="cheat_sheet_output_block" id="block_28268_110060"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_code"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><pre><code>function greaterThan(n) {
+&nbsp;&nbsp;&nbsp;return x =&gt; x &gt; n;
+}let greaterThanTwo = greaterThan(2);console.log(greaterThanTwo(5));</code></pre></td></tr></table><div
+class="cheat_sheet_note"><div
+style="padding: 3px 8px;">In FP, an important concept is Higher&#173;-order functions.<br
+/>
+<br
+/>
+It's a function that accepts (what's typically called) a callback function.<br
+/>
+In JS you can benefit by using libraries like Ramda or lodash/f.</div></div></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_onecol" style="z-index: 30; page-break-inside: avoid;" id="block_110061"><h3 class="cheat_sheet_output_title" id="title_28268_110061">Function Compos&#173;ition</h3><div
+class="cheat_sheet_output_block" id="block_28268_110061"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_onecol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1" colspan="1"><div
+style="padding: 3px 8px;">var compose = (f, g) =&gt; (x) =&gt; f(g(x));</div></td></tr></table><div
+class="cheat_sheet_note"><div
+style="padding: 3px 8px;">Function Compos&#173;ition is an act of compos&#173;ing&#173;/cr&#173;eating functions that allow you to further simplify and compress your functions by taking functions as an argument and return an output.<br
+/>
+<br
+/>
+It may also return another function as its output other than numeri&#173;cal&#173;/string values.</div></div></div>
+</section></td></tr></table><div
+id="tag_list" class="tac" style="padding: 40px 100px 0; line-height: 2.5;"> <span
+style="color: #999; white-space: nowrap;"><i
+class="fa fa-tag"></i> <a
+rel="tag" class="tag" href="/tag/javascript/">javascript</a></span> &nbsp; &nbsp; <span
+style="color: #999; white-space: nowrap;"><i
+class="fa fa-tag"></i> <a
+rel="tag" class="tag" href="/tag/functionalprogramming/">functionalprogramming</a></span></div>
+</article><div
+class="clear" style="margin-top: 50px;"></div><aside
+id="downloads" style="margin-top: 0;"><div
+class="clear"></div><div
+class="triptychdbll" style="float: none; margin: 0 auto; background: #F7F9F7; border-radius: 5px; border: 2px solid #01470D; padding: 50px 30px 30px; box-sizing: border-box; position: relative;"><div
+id="download_icon" style="position: absolute; width: 50px; height: 50px; margin-left: -28px; top: -28px; left: 50%; border-radius: 100%; border: 3px solid #01470D; background: #01470D; font-size: 24px; text-align: center; line-height: 50px; color: #fff; ?>;"><i
+class="fa fa-fw fa-download" style="position: relative; left: 1px;"></i></div><h2 class="notopmargin" style="text-align: center;">Download the <span
+itemprop="name">Functional Programming in JavaScript Cheat Sheet Cheat Sheet</span></h2><div
+class="biptych1"><div
+class="padded">
+<a
+style="line-height: 1; display: block; height: 200px; overflow: hidden; position: relative; box-shadow: 1px 1px 3px #666; " class="imagelink" href="#" onclick="showPopup('https://cheatography.com//ck0d3r/cheat-sheets/functional-programming-in-javascript-cheat-sheet/pdf/'); return false;"><img
+style="line-height: 1;" width="100%" src="//media.cheatography.com/storage/thumb/ck0d3r_functional-programming-in-javascript-cheat-sheet.750.jpg?last=1623274323"><span
+class="page_count" style="background-color: #D3DFD5">1 Page</span></a><div
+style="display: none;">
+<span
+itemprop="url">https://cheatography.com/ck0d3r/cheat-sheets/functional-programming-in-javascript-cheat-sheet/</span>
+<span
+itemprop="thumbnailUrl">//media.cheatography.com/storage/thumb/ck0d3r_functional-programming-in-javascript-cheat-sheet.750.jpg</span></div></div></div><div
+class="biptych2"><div
+class="padded"><p
+class="padded"><strong>PDF</strong> (recommended)</p><ul
+class="noicon" style="margin-bottom: 20px;"><li><i
+class="fa fa-fw fa-file-pdf-o"></i> <a
+rel="alternate" target="_blank" href="https://cheatography.com/ck0d3r/cheat-sheets/functional-programming-in-javascript-cheat-sheet/pdf/" onclick="showPopup('https://cheatography.com/ck0d3r/cheat-sheets/functional-programming-in-javascript-cheat-sheet/pdf/'); trackDownload('PDF', this.href); return false;">PDF (1 page)</a></li></ul><p
+class="padded"><strong>Alternative&nbsp;Downloads</strong></p><ul
+class="noicon"><li><i
+class="fa fa-fw fa-file-pdf-o"></i> <a
+rel="alternate" target="_blank" href="https://cheatography.com/ck0d3r/cheat-sheets/functional-programming-in-javascript-cheat-sheet/pdf_bw/" onclick="showPopup('https://cheatography.com/ck0d3r/cheat-sheets/functional-programming-in-javascript-cheat-sheet/pdf_bw/'); trackDownload('PDF - Black and White', this.href); return false;">PDF (black and white)</a></li><li><i
+class="fa fa-fw fa-file-text-o"></i> <a
+rel="alternate" target="_blank" href="https://cheatography.com/ck0d3r/cheat-sheets/functional-programming-in-javascript-cheat-sheet/latex/" onclick="showPopup('https://cheatography.com/ck0d3r/cheat-sheets/functional-programming-in-javascript-cheat-sheet/latex/'); trackDownload('LaTeX', this.href); return false;">LaTeX</a></li></ul></div></div><div
+class="clear"></div></div><div
+class="clear"></div> <script type="text/javascript">$(document).ready(function() {
+                    $('#download_box').hide();
+                    $('#download_box').css('position', 'fixed');
+
+                    updateSubsection();
+                    $('#cheat_sheet_section').change(function(){
+                        updateSubsection();
+                    });
+
+                });
+
+                function updateSubsection() {
+                    $('#subsection_programming, #subsection_software, #subsection_business, #subsection_education, #subsection_home, #subsection_games,  #thisdoesnotexist').hide();
+                    switch ($('#cheat_sheet_section').val()) {
+                                                case 'programming':
+                            $('#subsection_programming').show();
+                            break;
+                                                case 'software':
+                            $('#subsection_software').show();
+                            break;
+                                                case 'business':
+                            $('#subsection_business').show();
+                            break;
+                                                case 'education':
+                            $('#subsection_education').show();
+                            break;
+                                                case 'home':
+                            $('#subsection_home').show();
+                            break;
+                                                case 'games':
+                            $('#subsection_games').show();
+                            break;
+                                            }
+                }
+
+                var timeToGo = 5;
+                var downloadTimer = false;
+                var downloadTarget = false;
+                function showPopup(target) {
+window.location.replace(target);
+return false;
+                    downloadTarget = target;
+                    timeToGo = 5;
+                    doCountdown();
+                    downloadTimer = setInterval(doCountdown, 1000);
+                    $('#showClose').hide();
+                    $('#download_box').show();
+                }
+                function doCountdown() {
+                    $('#counter').text(timeToGo);
+                    timeToGo = timeToGo - 1;
+                    if (timeToGo <= 0) {
+                        $('#showClose').fadeIn();
+                        clearInterval(downloadTimer);
+                        window.location.replace(downloadTarget);
+                    }
+                }</script> <div
+style="display: none; padding: 100px; text-align: center; background: #fff; background: rgba(255, 255, 255, 0.9); z-index: 3000; left: 0; right: 0; top: 0; bottom: 0; display: none;" id="download_box"><p
+style="text-align: center; font-size: 1.5em; color: #333;">Your Download Will Begin Automatically in <span
+id="counter">5</span> Seconds.<span
+id="showClose"><br><a
+onclick="$('#download_box').hide(); return false;" id="closebox">Close</a></span></p></div></aside><div
+class="clear" style="margin-bottom: 50px;"></div><div
+id="comments"><div
+class="clear">&nbsp;</div><div
+class="triptych3"><div
+id="tourauthors" class="sidebar_box cheat_sheet_footer sidebar_box_first_row"><h2 class="newsectiontitle notopmargin">Created By</h2><div
+class="sidebar_box_row">
+<a
+rel="author" style="float: left; margin: 6px 10px 10px 0" href="/ck0d3r/" class="imagelink"><img
+class="gravatar lazy" style="vertical-align: middle;" src="/images/spacer.png" data-original="//media.cheatography.com/images/users/d88ec61faa7bd587b1895274acc5837f.32.jpg" width="32" height="32" alt="ck0d3r"></a><a
+rel="author" href="/ck0d3r/" class="user_hover">ck0d3r</a></div><div
+class="clear"></div></div><div
+class="sidebar_box cheat_sheet_footer sidebar_box_first_row"><div
+class="sidebar_box_first_row"><h2 class="newsectiontitle">Metadata</h2></div><div
+class="sidebar_box_row"><ul
+class="small_content_list"><li>Languages:<meta
+itemprop="inLanguage" content="en"/>
+<a
+rel="tag" href="/language/en/">English</a></li><meta
+itemprop="datePublished" content="2021-06-09"><li>Published: <span
+class="publish_date">9th June, 2021</span></li></ul></div></div></div><div
+class="triptychdbll"><h2 class="newsectiontitle notopmargin">Comments</h2><p
+class="padded">No comments yet. Add yours below!</p><h2 class="newsectiontitle">Add a Comment</h2><div
+id="reply_default"><div
+id="comment_form"><form
+novalidate class="pageForm" id="commentForm" method="POST" action="https://cheatography.com:443/ck0d3r/cheat-sheets/functional-programming-in-javascript-cheat-sheet/#comment_form">
+<input
+type="hidden" name="action" value="comment"/>
+<input
+type="hidden" name="spamkey" value="2.0200222981297E+20">
+<input
+type="text" name="website" id="comment_form_url" value="http://"><fieldset><legend>Your Comment</legend><div
+class="formrow"><p
+class="forminfo"><span>Please enter your name.</span></p><label
+for="commenter_name">Your Name</label><input
+required  type="text" id="commenter_name" name="commenter_name"><div
+class="clear"></div><ul
+class="error off"></ul><div
+class="clear"></div></div><div
+class="formrow"><p
+class="forminfo"><span>Please enter your email address</span></p><label
+for="commenter_email">Your Email Address</label><input
+required  type="email" id="commenter_email" name="commenter_email"><div
+class="clear"></div><ul
+class="error off"></ul><div
+class="clear"></div></div><div
+class="formrow"><p
+class="forminfo"><span>Please enter your Comment.</span></p><label
+for="comment_text">Your Comment</label><textarea cols="50" rows="5" name="comment_text" id="comment_text" required  id="comment_text" name="comment_text"></textarea><div
+class="clear"></div><ul
+class="error off"></ul><div
+class="clear"></div></div><div
+class="buttonrow"><button
+name="continue" id="continue" value="continue" type="submit" id="continue" name="continue"><div><span><strong>Post</strong> Your Comment</span></div></button><div
+class="clear"></div><ul
+class="error off"></ul><div
+class="clear"></div></div></fieldset></form></div></div> <script type="text/javascript">$(document).ready(function () {
+            $("#commentForm").validate({
+                unhighlight: function (el, error, valid, _orig) {
+                    if (el.id == 'sidebar_username') {
+                    }
+                    $(el).parent().find('p').addClass("valid");
+                    $(el).parent().find('p').removeClass("invalid");
+                    $(el).parent().find('ul.error').hide('slow');
+                },
+                highlight: function (el, error, valid, _orig) {
+                    $(el).parent().find('p').removeClass("valid");
+                    $(el).parent().find('p').addClass("invalid");
+                },
+                errorPlacement: function(error, el) {
+                    $(el).parent().find('ul.error').html('<li>' + $(error).text() + '</li>');
+                    $(el).parent().find('ul.error').show('slow');
+                    //$(el).parent().find('span').html($(error).text());
+                    return true;
+                }
+            });
+        });</script> <script type="text/javascript">function replyTo(reply_comment_id, thread) {
+        if (reply_comment_id == 0) {
+            // Move comment_form to reply_default
+            $("#comment_form").prependTo("#reply_default");
+            // Set comment_reply_id to 0
+            $("#comment_reply_id").val(0);
+            $('#replytext').hide();
+        } else {
+            // Move comment_form to reply_<reply_comment_id>
+            if (thread) {
+                $("#comment_form").prependTo("#comment_thread_" + reply_comment_id);
+            } else {
+                $("#comment_form").prependTo("#reply_" + reply_comment_id);
+            }
+            // Set comment_reply_id to <reply_comment_id>
+            $("#comment_reply_id").val(reply_comment_id);
+            $('#replytext').show();
+        }
+        return false;
+    }</script> </div><div
+class="clear"></div><h2 class="newsectiontitle">Related Cheat Sheets</h2><div
+class="clear"></div><div
+id="cheat_sheet_513" class="cheat_sheet_row altrow triptych1 tag-javascript tag-beginner tag-intermediate tag-framework tag-angularjs tag-angular lang-en rating-5" style="margin-bottom: 20px; position: relative; padding: 10px 0 0 0; min-height: 220px; background: #850F0B url('/images/ajax-loader.gif') 50% 40% no-repeat;"><div
+style="z-index: 100; position: absolute; top: 0; padding: 0 0 0 6px; border-bottom-left-radius: 3px; right: 10px; color: #EFD6D5; background: #850F0B;"><i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i></div><a
+class="lazy" data-original="//media.cheatography.com/storage/thumb/proloser_angularjs.400.jpg?time=1582972480" style="position: absolute; bottom: 0; left: 10px; right: 10px; background: url('/images/spacer.png') -13px -52px no-repeat; height: 220px;" href="/proloser/cheat-sheets/angularjs/"></a><div
+style="z-index: 801; position: absolute; bottom: 0; left: 0; right: 0; color: #EFD6D5; background: #530907;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.3em; color: #EFD6D5; border-color: #EFD6D5;" href="/proloser/cheat-sheets/angularjs/">AngularJS Cheat Sheet</a></strong><div
+class="extrainfo" style="display: none; line-height: 25px; padding: 0 0 5px;"><div
+style="padding: 5px 0 0;">The official - unofficial AngularJS cheatsheet.</div><div
+class="triptych1"><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="//media.cheatography.com/images/users/b41745424d2decea7ca961682e76771d.16.jpg"><a
+style="color: #EFD6D5; border-color: #EFD6D5;" href="/proloser/" class="user_hover">ProLoser</a></span></div><div
+class="triptych2"><i
+class="fa fa-fw fa-calendar first-list"></i>9 Aug 12</div><div
+class="triptych3"><i
+class="fa fa-fw fa-book"></i>5 Pages</div><div
+class="clear"></div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #EFD6D5; border-color: #EFD6D5;" href="/tag/javascript/cheat-sheets/">javascript</a>, <a
+style="color: #EFD6D5; border-color: #EFD6D5;" href="/tag/beginner/cheat-sheets/">beginner</a>, <a
+style="color: #EFD6D5; border-color: #EFD6D5;" href="/tag/intermediate/cheat-sheets/">intermediate</a>, <a
+style="color: #EFD6D5; border-color: #EFD6D5;" href="/tag/framework/cheat-sheets/">framework</a>, <a
+style="color: #EFD6D5; border-color: #EFD6D5;" href="/tag/angularjs/cheat-sheets/">angularjs</a>, <a
+style="color: #EFD6D5; border-color: #EFD6D5;" href="/tag/angular/cheat-sheets/">angular</a></div></div></div></div><div
+class="clear"></div></div><div
+id="cheat_sheet_7" class="cheat_sheet_row altrow triptych2 tag-development tag-javascript tag-web tag-design tag-frontend tag-js tag-node lang-en rating-5" style="margin-bottom: 20px; position: relative; padding: 10px 0 0 0; min-height: 220px; background: #00776C url('/images/ajax-loader.gif') 50% 40% no-repeat;"><div
+style="z-index: 100; position: absolute; top: 0; padding: 0 0 0 6px; border-bottom-left-radius: 3px; right: 10px; color: #D3ECEA; background: #00776C;"><i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i></div><a
+class="lazy" data-original="//media.cheatography.com/storage/thumb/davechild_javascript.400.jpg?time=1462956370" style="position: absolute; bottom: 0; left: 10px; right: 10px; background: url('/images/spacer.png') -13px -52px no-repeat; height: 220px;" href="/davechild/cheat-sheets/javascript/"></a><div
+style="z-index: 801; position: absolute; bottom: 0; left: 0; right: 0; color: #D3ECEA; background: #004A44;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.3em; color: #D3ECEA; border-color: #D3ECEA;" href="/davechild/cheat-sheets/javascript/">JavaScript Cheat Sheet</a></strong><div
+class="extrainfo" style="display: none; line-height: 25px; padding: 0 0 5px;"><div
+style="padding: 5px 0 0;">JavaScript methods and functions, a guide to regular expressions and the XMLHttpRequest object.</div><div
+class="triptych1"><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="//media.cheatography.com/images/users/fd7e3b77a3f3007ff30d932b65084851.16.jpg"><a
+style="color: #D3ECEA; border-color: #D3ECEA;" href="/davechild/" class="user_hover">DaveChild</a></span></div><div
+class="triptych2"><i
+class="fa fa-fw fa-calendar first-list"></i>19 Oct 11</div><div
+class="triptych3"><i
+class="fa fa-fw fa-book"></i>2 Pages</div><div
+class="clear"></div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #D3ECEA; border-color: #D3ECEA;" href="/tag/development/cheat-sheets/">development</a>, <a
+style="color: #D3ECEA; border-color: #D3ECEA;" href="/tag/javascript/cheat-sheets/">javascript</a>, <a
+style="color: #D3ECEA; border-color: #D3ECEA;" href="/tag/web/cheat-sheets/">web</a>, <a
+style="color: #D3ECEA; border-color: #D3ECEA;" href="/tag/design/cheat-sheets/">design</a>, <a
+style="color: #D3ECEA; border-color: #D3ECEA;" href="/tag/frontend/cheat-sheets/">frontend</a> and 2 more&nbsp;...</div></div></div></div><div
+class="clear"></div></div><div
+id="cheat_sheet_1044" class="cheat_sheet_row altrow triptych3 tag-javascript tag-testing tag-framework tag-jasmine tag-js lang-en rating-4" style="margin-bottom: 20px; position: relative; padding: 10px 0 0 0; min-height: 220px; background: #0F5840 url('/images/ajax-loader.gif') 50% 40% no-repeat;"><div
+style="z-index: 100; position: absolute; top: 0; padding: 0 0 0 6px; border-bottom-left-radius: 3px; right: 10px; color: #D6E6E1; background: #0F5840;"><i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star-o"></i></div><a
+class="lazy" data-original="//media.cheatography.com/storage/thumb/citguy_jasmine-js-testing.400.jpg?time=1463105188" style="position: absolute; bottom: 0; left: 10px; right: 10px; background: url('/images/spacer.png') -13px -52px no-repeat; height: 220px;" href="/citguy/cheat-sheets/jasmine-js-testing/"></a><div
+style="z-index: 801; position: absolute; bottom: 0; left: 0; right: 0; color: #D6E6E1; background: #093728;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.3em; color: #D6E6E1; border-color: #D6E6E1;" href="/citguy/cheat-sheets/jasmine-js-testing/">jasmine JS testing Cheat Sheet</a></strong><div
+class="extrainfo" style="display: none; line-height: 25px; padding: 0 0 5px;"><div
+style="padding: 5px 0 0;">DOM-less simple JavaScript testing framework</div><div
+class="triptych1"><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="//media.cheatography.com/images/users/00405645c5fe2805e62c31576cf8cebc.16.jpg"><a
+style="color: #D6E6E1; border-color: #D6E6E1;" href="/citguy/" class="user_hover">CITguy</a></span></div><div
+class="triptych2"><i
+class="fa fa-fw fa-calendar first-list"></i>14 May 13</div><div
+class="triptych3"><i
+class="fa fa-fw fa-book"></i>1 Page</div><div
+class="clear"></div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #D6E6E1; border-color: #D6E6E1;" href="/tag/javascript/cheat-sheets/">javascript</a>, <a
+style="color: #D6E6E1; border-color: #D6E6E1;" href="/tag/testing/cheat-sheets/">testing</a>, <a
+style="color: #D6E6E1; border-color: #D6E6E1;" href="/tag/framework/cheat-sheets/">framework</a>, <a
+style="color: #D6E6E1; border-color: #D6E6E1;" href="/tag/jasmine/cheat-sheets/">jasmine</a>, <a
+style="color: #D6E6E1; border-color: #D6E6E1;" href="/tag/js/cheat-sheets/">js</a></div></div></div></div><div
+class="clear"></div></div><div
+class="clear"></div><div
+class="clear"></div></div><div
+class="clear"></div></div></div></div><div
+class="clear"></div></div></div><div
+class="clear"></div><div
+id="footer"><div
+id="footer_inner"><div
+class="biptychl"><h2>Latest Cheat Sheet</h2><div
+class="cheat_sheet_box" style="margin: 0 0 20px; padding: 0 0 15px"><div
+class="inner" style="padding: 5px 10px 0;"><div
+itemscope itemtype="http://schema.org/CreativeWork" id="cheat_sheet_28268" class="cheat_sheet_row altrow tag-javascript tag-functionalprogramming lang-en rating-unrated" style="margin-bottom: 20px; position: relative; padding: 10px; min-height: 220px; background: #01390B;"><div
+class="triptych1" style="position: relative; background: url('/images/ajax-loader.gif') 50% 40% no-repeat; height: 250px;"><a
+class="lazy imagelink" data-original="//media.cheatography.com/storage/thumb/ck0d3r_functional-programming-in-javascript-cheat-sheet.400.jpg?time=1623274323" style="box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); position: absolute; top: 0; left: 0; right: 0; background: url('/images/spacer.png') 0 0 no-repeat; background-size: cover; height: 220px;" href="/ck0d3r/cheat-sheets/functional-programming-in-javascript-cheat-sheet/"></a><div
+style="position: absolute; bottom: 33px; left: 3px;"><span
+class="page_count" style="background-color: #D3DFD5; white-space: nowrap;"><i
+class="fa fa-fw fa-book"></i>1 Page</span></div><div
+style="position: absolute; top: 230px; text-align: center; left: 0; right: 0; color: #D3DFD5;"><i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> &nbsp; (0)</div></div><div
+class="triptychdblr" style="color: #D3DFD5; background: #012407; min-height: 250px;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.7em; color: #D3DFD5; border-color: #D3DFD5;" href="/ck0d3r/cheat-sheets/functional-programming-in-javascript-cheat-sheet/" itemprop="url"><span
+itemprop="name">Functional Programming in JavaScript Cheat Sheet Cheat Sheet</span></a></strong><div
+class="" style="line-height: 2; padding: 0;"><div
+style="padding: 5px 0 15px;">This is a cheat sheet describing the basics of FP in JS</div><div><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="//media.cheatography.com/images/users/d88ec61faa7bd587b1895274acc5837f.16.jpg"><a
+style="color: #D3DFD5; border-color: #D3DFD5;" href="/ck0d3r/" class="user_hover">ck0d3r</a></span></div><div><i
+class="fa fa-fw fa-calendar second-list" date-last-update="2021-06-09 21:32:03"></i>9 Jun 21</div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #D3DFD5; border-color: #D3DFD5;" href="/tag/javascript/cheat-sheets/">javascript</a>, <a
+style="color: #D3DFD5; border-color: #D3DFD5;" href="/tag/functionalprogramming/cheat-sheets/">functionalprogramming</a></div></div></div></div><div
+class="clear"></div></div></div></div></div><div
+class="biptychr"><h2>Random Cheat Sheet</h2><div
+class="sidebar_box" style="margin: 0 0 20px; padding: 0 0 15px"><div
+class="inner" style="padding: 5px 10px 0;"><div
+id="cheat_sheet_2229" class="cheat_sheet_row altrow tag-autodesk tag-architect tag-revit tag-bimarchi-studio lang-fr rating-unrated" style="margin-bottom: 20px; position: relative; padding: 10px; min-height: 220px; background: #A89624;"><div
+class="triptych1" style="position: relative; background: url('/images/ajax-loader.gif') 50% 40% no-repeat; height: 250px;"><a
+class="lazy imagelink" data-original="//media.cheatography.com/storage/thumb/documentation_revit-2017-by-bimarchi-studio.400.jpg?time=1551192620" style="box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); position: absolute; top: 0; left: 0; right: 0; background: url('/images/spacer.png') 0 0 no-repeat; background-size: cover; height: 220px;" href="/documentation/cheat-sheets/revit-2017-by-bimarchi-studio/"></a><div
+style="position: absolute; bottom: 33px; left: 3px;"><span
+class="page_count" style="background-color: #F7F3DB; white-space: nowrap;"><i
+class="fa fa-fw fa-book"></i>1 Page</span></div><div
+style="position: absolute; top: 230px; text-align: center; left: 0; right: 0; color: #F7F3DB;"><i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> &nbsp; (0)</div></div><div
+class="triptychdblr" style="color: #F7F3DB; background: #695E16; min-height: 250px;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.7em; color: #F7F3DB; border-color: #F7F3DB;" href="/documentation/cheat-sheets/revit-2017-by-bimarchi-studio/" itemprop="url"><span
+itemprop="name">Revit 2017 by bimarchi.studio Cheat Sheet</span></a></strong><div
+class="" style="line-height: 2; padding: 0;"><div
+style="padding: 5px 0 15px;">Raccourcis clavier pour Revit 2017</div><div><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="//media.cheatography.com/images/users/f0804f61f3e77c39a7bac8d84118e9d6.16.jpg"><a
+style="color: #F7F3DB; border-color: #F7F3DB;" href="/documentation/" class="user_hover">documentation</a></span></div><div><i
+class="fa fa-fw fa-calendar second-list" date-last-update="2019-02-26 14:50:20"></i>23 Jun 14, updated 26 Feb 19</div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #F7F3DB; border-color: #F7F3DB;" href="/tag/autodesk/cheat-sheets/">autodesk</a>, <a
+style="color: #F7F3DB; border-color: #F7F3DB;" href="/tag/architect/cheat-sheets/">architect</a>, <a
+style="color: #F7F3DB; border-color: #F7F3DB;" href="/tag/revit/cheat-sheets/">revit</a>, <a
+style="color: #F7F3DB; border-color: #F7F3DB;" href="/tag/bimarchi-studio/cheat-sheets/">bimarchi-studio</a></div><div><i
+class="fa fa-fw fa-globe"></i><a
+style="color: #F7F3DB; border-color: #F7F3DB;" href="/language/fr/">français (French)</a></div></div></div></div><div
+class="clear"></div></div></div></div></div><div
+class="clear"></div><div
+class="triptych1"><h2>About Cheatography</h2><div
+class="sidebar_box"><div
+class="sidebar_box_row"><strong><a
+href="/about/">Cheatography</a></strong> is a collection of <strong><a
+href="/explore/">4589 cheat sheets</a></strong> and quick references in <strong><a
+href="/language/">25 languages</a></strong> for everything from <strong><a
+href="/tag/science/">science</a></strong> to <strong><a
+href="/tag/business/">business</a></strong>!</div></div></div><div
+class="triptych2"><div
+class="sidebar_box"><div
+class="sidebar_box_first_row"><h4>Behind the Scenes</h4></div><div
+class="sidebar_box_row">If you have any problems, or just want to say hi, you can find us right here:</div><div
+class="sidebar_box_row"><div
+class="biptych1"><a
+class="imagelink" style="float: left; margin: 5px 8px 0 0;" href="davechild/"><img
+class="lazy gravatar" src="/images/spacer.png" data-original="//media.cheatography.com/images/users/fd7e3b77a3f3007ff30d932b65084851.32.jpg" width="32" height="32" alt="DaveChild"></a> <a
+href="davechild/" class="user_hover" style="line-height: 42px;">DaveChild</a><div
+class="clear"></div></div><div
+class="biptych2"><a
+class="imagelink" style="float: left; margin: 5px 8px 0 0;" href="spaceduck/"><img
+class="lazy gravatar" src="/images/spacer.png" data-original="//media.cheatography.com/images/users/e5f4dc698559e9cdd546c749924c2342.32.jpg" width="32" height="32" alt="SpaceDuck"></a> <a
+href="spaceduck/" class="user_hover" style="line-height: 42px;">SpaceDuck</a><div
+class="clear"></div></div><div
+class="biptych1"><a
+class="imagelink" style="float: left; margin: 5px 8px 0 0;" href="cheatography/"><img
+class="lazy gravatar" src="/images/spacer.png" data-original="//media.cheatography.com/images/users/ae07a15380055b9d1da4dd5fb7538457.32.jpg" width="32" height="32" alt="Cheatography"></a> <a
+href="cheatography/" class="user_hover" style="line-height: 42px;">Cheatography</a><div
+class="clear"></div></div></div><div
+class="clear"></div></div></div><div
+class="triptych3"><h2>Recent Activity</h2><div
+class="sidebar_box"><div
+class="sidebar_box_row footer_recent_activity_1"><a
+class="imagelink" style="float: left; margin: 5px 8px 5px 0;" href="fylke/"><img
+class="gravatar lazy" src="/images/spacer.png" data-original="//media.cheatography.com/images/users/23595723d932d8516ed3aaf0986aaca8.32.jpg" width="32" height="32" alt="Fylke"></a> <a
+href="fylke/" class="user_hover">Fylke</a> updated <a
+href="/fylke/cheat-sheets/erlang-binaries/">Erlang Binaries</a>.<br><span
+class="sidebar_event_date">1 day 19 hours ago</span></div><div
+class="sidebar_box_row footer_recent_activity_2"><a
+class="imagelink" style="float: left; margin: 5px 8px 5px 0;" href="albertx/"><img
+class="gravatar lazy" src="/images/spacer.png" data-original="//media.cheatography.com/images/users/7edd8ed3d29f82e658fa32efeefb9264.32.jpg" width="32" height="32" alt="albertx"></a> <a
+href="albertx/" class="user_hover">albertx</a> updated <a
+href="/albertx/cheat-sheets/openssl/">OpenSSL</a>.<br><span
+class="sidebar_event_date">2 days 10 hours ago</span></div><div
+class="sidebar_box_row footer_recent_activity_3"><a
+class="imagelink" style="float: left; margin: 5px 8px 5px 0;" href="ck0d3r/"><img
+class="gravatar lazy" src="/images/spacer.png" data-original="//media.cheatography.com/images/users/d88ec61faa7bd587b1895274acc5837f.32.jpg" width="32" height="32" alt="ck0d3r"></a> <a
+href="ck0d3r/" class="user_hover">ck0d3r</a> updated <a
+href="/ck0d3r/cheat-sheets/functional-programming-in-javascript-cheat-sheet/">Functional Programming in JavaScript Cheat Sheet</a>.<br><span
+class="sidebar_event_date">2 days 10 hours ago</span></div><div
+class="sidebar_box_row footer_recent_activity_4"><a
+class="imagelink" style="float: left; margin: 5px 8px 5px 0;" href="gregfinzer/"><img
+class="gravatar lazy" src="/images/spacer.png" data-original="//media.cheatography.com/images/users/51425fabcb7b8b62c6cef848600aa40f.32.jpg" width="32" height="32" alt="GregFinzer"></a> <a
+href="gregfinzer/" class="user_hover">GregFinzer</a> published <a
+href="/gregfinzer/cheat-sheets/unity-container/">Unity Container</a>.<br><span
+class="sidebar_event_date">2 days 10 hours ago</span></div><div
+class="sidebar_box_row sidebar_box_last_row footer_recent_activity_5"><a
+class="imagelink" style="float: left; margin: 5px 8px 5px 0;" href="tajla-medeiros/"><img
+class="gravatar lazy" src="/images/spacer.png" data-original="//media.cheatography.com/images/users/4a3d8a1f90558d6254bce690cd970e24.32.jpg" width="32" height="32" alt="tajla.medeiros"></a> <a
+href="tajla-medeiros/" class="user_hover">tajla.medeiros</a> updated <a
+href="/tajla-medeiros/cheat-sheets/retomada-do-setor-de-eventos/">Retomada do Setor de Eventos</a>.<br><span
+class="sidebar_event_date">2 days 15 hours ago</span></div><div
+class="clear"></div></div></div><div
+class="clear"></div><div
+class="legal"><div
+class="legal_left">
+&copy; 2011  - 2021 Cheatography.com &nbsp; | &nbsp; <a
+rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/uk/">CC License</a> &nbsp; | &nbsp; <a
+href="/terms-and-conditions/">Terms</a> &nbsp; | &nbsp;  <a
+href="/privacy/">Privacy</a></div><div
+class="legal_right">
+<a
+href="https://cheatography.com/explore/new/rss/"><i
+class="fa fa-rss-square"></i> Latest Cheat Sheets RSS Feed</a></div><div
+class="clear"></div></div><div
+class="clear"></div></div><div
+class="clear"></div></div><div
+class="clear"></div></div></div><div
+style="height: 100px;">&nbsp;</div> <script type="text/javascript">var infolinks_pid = 3316044; var infolinks_wsid = 0;</script> <script defer type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script> </body><head> <script type="text/javascript" async=true>(function() {
+  var host = 'cheatography.com';
+  var element = document.createElement('script');
+  var firstScript = document.getElementsByTagName('script')[0];
+  var url = 'https://quantcast.mgr.consensu.org'
+    .concat('/choice/', 'jq_3-rhyc-Wwc', '/', host, '/choice.js')
+  var uspTries = 0;
+  var uspTriesLimit = 3;
+  element.async = true;
+  element.type = 'text/javascript';
+  element.src = url;
+
+  firstScript.parentNode.insertBefore(element, firstScript);
+
+  function makeStub() {
+    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+    var queue = [];
+    var win = window;
+    var cmpFrame;
+
+    function addFrame() {
+      var doc = win.document;
+      var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+      if (!otherCMP) {
+        if (doc.body) {
+          var iframe = doc.createElement('iframe');
+
+          iframe.style.cssText = 'display:none';
+          iframe.name = TCF_LOCATOR_NAME;
+          doc.body.appendChild(iframe);
+        } else {
+          setTimeout(addFrame, 5);
+        }
+      }
+      return !otherCMP;
+    }
+
+    function tcfAPIHandler() {
+      var gdprApplies;
+      var args = arguments;
+
+      if (!args.length) {
+        return queue;
+      } else if (args[0] === 'setGdprApplies') {
+        if (
+          args.length > 3 &&
+          args[2] === 2 &&
+          typeof args[3] === 'boolean'
+        ) {
+          gdprApplies = args[3];
+          if (typeof args[2] === 'function') {
+            args[2]('set', true);
+          }
+        }
+      } else if (args[0] === 'ping') {
+        var retr = {
+          gdprApplies: gdprApplies,
+          cmpLoaded: false,
+          cmpStatus: 'stub'
+        };
+
+        if (typeof args[2] === 'function') {
+          args[2](retr);
+        }
+      } else {
+        queue.push(args);
+      }
+    }
+
+    function postMessageEventHandler(event) {
+      var msgIsString = typeof event.data === 'string';
+      var json = {};
+
+      try {
+        if (msgIsString) {
+          json = JSON.parse(event.data);
+        } else {
+          json = event.data;
+        }
+      } catch (ignore) {}
+
+      var payload = json.__tcfapiCall;
+
+      if (payload) {
+        window.__tcfapi(
+          payload.command,
+          payload.version,
+          function(retValue, success) {
+            var returnMsg = {
+              __tcfapiReturn: {
+                returnValue: retValue,
+                success: success,
+                callId: payload.callId
+              }
+            };
+            if (msgIsString) {
+              returnMsg = JSON.stringify(returnMsg);
+            }
+            if (event && event.source && event.source.postMessage) {
+              event.source.postMessage(returnMsg, '*');
+            }
+          },
+          payload.parameter
+        );
+      }
+    }
+
+    while (win) {
+      try {
+        if (win.frames[TCF_LOCATOR_NAME]) {
+          cmpFrame = win;
+          break;
+        }
+      } catch (ignore) {}
+
+      if (win === window.top) {
+        break;
+      }
+      win = win.parent;
+    }
+    if (!cmpFrame) {
+      addFrame();
+      win.__tcfapi = tcfAPIHandler;
+      win.addEventListener('message', postMessageEventHandler, false);
+    }
+  };
+
+  makeStub();
+
+  var uspStubFunction = function() {
+    var arg = arguments;
+    if (typeof window.__uspapi !== uspStubFunction) {
+      setTimeout(function() {
+        if (typeof window.__uspapi !== 'undefined') {
+          window.__uspapi.apply(window.__uspapi, arg);
+        }
+      }, 500);
+    }
+  };
+
+  var checkIfUspIsReady = function() {
+    uspTries++;
+    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+      console.warn('USP is not accessible');
+    } else {
+      clearInterval(uspInterval);
+    }
+  };
+
+  if (typeof window.__uspapi === 'undefined') {
+    window.__uspapi = uspStubFunction;
+    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+  }
+})();</script>  <script type="text/javascript" src="/scripts/jquery.cookie.js"></script> <script type="text/javascript">$(document).ready(function() {
+            // Hide elements not relevant to non-logged-in users
+            var loggedIn = $.cookie('frontLoggedIn');
+            var loggedInUserId = $.cookie('frontUserId');
+            var isAdmin = $.cookie('frontUserAdmin');
+            if (loggedIn == 1) {
+                // Replacements
+                $('.replace_username').html($.cookie('frontUserName'));
+                $('a.replace_userlink, .replace_userlink a').each(function(){
+                    var oldHref = $(this).attr('href');
+                    var newHref = oldHref.replace('davechild', $.cookie('frontUserAlias'));
+                    $(this).attr('href', newHref);
+                });
+                $('.replace_usergravatar').attr('src', $.cookie('frontUserAvatar32'));
+                // Show and hide
+                //$('.logged_in').show();
+                $('.logged_out').hide();
+
+                if (isAdmin) {
+                    $('.admin_view').show();
+                }
+
+                $('.user_view').each(function(){
+                    var userIds = $(this).attr('data-userid').split(',');
+                    if ($.inArray(loggedInUserId, userIds)) {
+                        $(this).show();
+                    }
+                });
+
+            } else {
+                $('.logged_in').hide();
+                //$('.logged_out').show();
+            }
+        });</script> <link
+href="/scripts/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css"> <script type="text/javascript" src="/scripts/fancybox/jquery.fancybox.pack.js"></script> <script type="text/javascript" src="/scripts/jquery.validation.min.js"></script> <script type="text/javascript" src="/scripts/jquery.additional-validation.js"></script> <script type="text/javascript" src="/scripts/jquery.hoverIntent.minified.js"></script> <!--[if lt IE 7]> <script type="text/javascript" src="https://cheatography.com/scripts/iepngfix.htc"></script> <style type="text/css">body {
+                behavior: url("https://cheatography.com/scripts/csshover.htc");
+            }</style><![endif]--> <script type="text/javascript" src="/scripts/mobile.min.js"></script> <script type="text/javascript" src="/scripts/ajax.min.js"></script> <script type="text/javascript" src="/scripts/useful.min.js?v=2&q=1623481386"></script> <script type="text/javascript" src="/scripts/jquery.lazyload.min.js"></script> <script type="text/javascript">$(document).ready(function() {
+            $(".lazy").lazyload({
+                effect : "fadeIn",
+                failure_limit : 10
+            });
+        });</script> </head></html>

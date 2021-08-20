@@ -1,0 +1,37 @@
+.title {
+  text-align: center;
+  color: rgb(62, 24, 99);
+  margin-top: 10rem;
+}
+.objects {
+  margin: 1rem 350px;
+  gap: 1rem;
+  display: flex;
+}
+.card img {
+  width: 15rem;
+  height: 15rem;
+}
+.card p {
+  color: purple;
+  font-size: 1.5rem;
+}
+.card {
+  border: 0.5px solid rgb(243, 244, 246);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  padding: 5px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 200;
+}
+.head {
+  margin-bottom: 100px;
+}
+.head img:hover {
+  cursor: pointer;
+  background-color: rgb(231, 179, 231);
+  transition: 0.3s;
+  border-radius: 8rem;
+}
