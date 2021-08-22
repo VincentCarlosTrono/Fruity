@@ -37,3 +37,15 @@ a {
   /* border: 1px dashed green; */
   box-sizing: border-box;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns:
+    minmax(1rem, 1fr)
+    minmax(1rem, 1124px)
+    minmax(1rem, 1fr);
+}
+
+.container {
+  grid-column: 2/3;
+}
